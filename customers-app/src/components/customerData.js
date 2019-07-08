@@ -10,7 +10,7 @@ const customerData = props => {
 };
 
 customerData.propTypes = {
-    
+    //aqui se colocara los prototypes
 };
 
 export default customerData;
