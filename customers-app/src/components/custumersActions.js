@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const custumersActions = ({children}) => {
+const CustumersActions = ({children}) => {
     return (
         <div>
             <div className="customers-actions">
@@ -11,8 +11,8 @@ const custumersActions = ({children}) => {
     );
 };
 
-custumersActions.propTypes = {
+CustumersActions.propTypes = {
     children:PropTypes.node.isRequired,
 };
 
-export default custumersActions;
+export default CustumersActions;
