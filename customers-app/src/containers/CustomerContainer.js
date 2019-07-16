@@ -7,6 +7,8 @@ import CustumersActions from '../components/custumersActions';
 
 import { withRouter } from 'react-router-dom';
 import {fetchCustomers} from './../actions/fecthCustomers';
+
+
 const customers = [
     {
         "dni":"270003230",
@@ -66,10 +68,6 @@ CustomersContainer.propTypes = {
     fetchCustomers: PropTypes.func.isRequired,
 };
 
-const mapDispatchToProps = dispatch => (
-    {
-        fetchCustomers: () => dispatch(fetchCustomers())
-    }
-)
 
-export default withRouter(connect(null,mapDispatchToProps)(CustomersContainer));
+
+export default withRouter(connect(null,{fetchCustomers})(CustomersContainer));
