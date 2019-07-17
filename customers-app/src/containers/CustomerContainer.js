@@ -7,25 +7,9 @@ import CustumersActions from '../components/custumersActions';
 
 import { withRouter } from 'react-router-dom';
 import {fetchCustomers} from './../actions/fecthCustomers';
+import { getCustomers } from '../selectors/customers';
 
 
-const customers = [
-    {
-        "dni":"270003230",
-        "name":"jesus",
-        "age":32
-    },
-    {
-        "dni":"272300",
-        "name":"javier",
-        "age":10
-    },
-    {
-        "dni":"270000",
-        "name":"yegres",
-        "age":2
-    },
-];
 
 class CustomersContainer extends Component {
 
@@ -58,7 +42,7 @@ class CustomersContainer extends Component {
             <div>
                 <AppFrame 
                     header={'Listado De Clientes'}
-                    body={this.renderBody(customers)}></AppFrame>
+                    body={this.renderBody(this.props.customers)}></AppFrame>
             </div>
         );
     }
@@ -66,8 +50,17 @@ class CustomersContainer extends Component {
 
 CustomersContainer.propTypes = {
     fetchCustomers: PropTypes.func.isRequired,
+    customers: PropTypes.array.isRequired,
 };
 
 
+CustomersContainer.defaultProps = {
+    customers : [  ],
+}
 
-export default withRouter(connect(null,{fetchCustomers})(CustomersContainer));
+const mapStateToProps = state => ({
+    customers: getCustomers(state)
+})
+
+
+export default withRouter(connect(mapStateToProps,{fetchCustomers})(CustomersContainer));
