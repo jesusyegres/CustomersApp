@@ -8,11 +8,11 @@ class App extends Component {
 
   renderHome = () => <HomeContainer></HomeContainer>;
   
-  renderCustomerContainer = () => <h1>Customer Container</h1>
+  renderCustomerContainer = () => <h1>Customer Container 1</h1>
   
-  renderCustomerListContainer = () => <h1>Customer List Container</h1>
+  renderCustomerListContainer = () => <h1>Customer List Container 2</h1>
   
-  renderCustomerNewContainer = () => <h1>Customer New Container</h1>
+  renderCustomerNewContainer = () => <h1>Customer New Container 3</h1>
 
   render() {
   return (
